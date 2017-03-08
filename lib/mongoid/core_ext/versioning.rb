@@ -141,7 +141,7 @@ module Mongoid
       _loading_revision do
         self.class.unscoped
           .with(options) do |yielded_class|
-            return yielded_class.where(_id: id)
+            yielded_class.where(_id: id)
                                  .any_of({ version: version }, version: nil).first
           end
       end
