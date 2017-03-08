@@ -1,9 +1,8 @@
 module Mongoid
   module Relations
     module Options
-      options = OPTIONS
-      send :remove_const, :OPTIONS		
-      send :const_set, :OPTIONS, options + [:versioned]
+      common = COMMON
+      COMMON = common + [:versioned]
     end
   end
 end
